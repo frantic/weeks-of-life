@@ -1,13 +1,10 @@
-const birthday = new Date(1989, 1, 14);
-
-function main() {
+function main(birthday, maxAge) {
   const weeksOld = Math.ceil(
     (Date.now() - birthday) / (7 * 24 * 60 * 60 * 1000)
   );
-  console.log({ weeksOld });
   const table = document.createElement("div");
   table.className = "calendar";
-  for (let year = 0; year < 75; year++) {
+  for (let year = 0; year < maxAge; year++) {
     const row = document.createElement("div");
     row.className = "year";
     const label = document.createElement("div");
@@ -31,6 +28,8 @@ function main() {
   document.body.appendChild(table);
 }
 
-document.addEventListener("DOMContentLoaded", event => {
-  main();
+document.addEventListener("DOMContentLoaded", () => {
+  const [_, date, maxAge] = location.pathname.split("/");
+  console.log({ date, maxAge });
+  main(new Date(date), Number(maxAge));
 });
