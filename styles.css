@@ -47,5 +47,7 @@ body {
 }
 
 .now {
+  border-color: white;
+  background-color: white;
   animation: mymove 2s infinite;
 }

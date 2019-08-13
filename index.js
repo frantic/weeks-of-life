@@ -30,6 +30,6 @@ function main(birthday, maxAge) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const [_, date, maxAge] = location.pathname.split("/");
-  console.log({ date, maxAge });
-  main(new Date(date), Number(maxAge));
+
+  main(new Date(date || "2000-01-01"), Number(maxAge || 75));
 });
