@@ -7,6 +7,9 @@ function main(birthday, maxAge) {
   for (let year = 0; year < maxAge; year++) {
     const row = document.createElement("div");
     row.className = "year";
+    if (year > maxAge * 0.9) {
+      row.style.opacity = (maxAge - year) / (maxAge * 0.1);
+    }
     const label = document.createElement("div");
     label.className = "age";
     if (year % 5 === 0) {
